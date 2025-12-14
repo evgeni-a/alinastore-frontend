@@ -1,0 +1,15 @@
+{
+	"common": {
+		"login": "Login",
+		"logout": "Logout",
+		"loginWithGoogle": "Login with Google",
+		"welcome": "Welcome",
+		"language": "Language"
+	},
+	"auth": {
+		"loginRequired": "Please login to continue",
+		"loggingIn": "Logging in...",
+		"loginError": "Login failed. Please try again."
+	}
+}
+
