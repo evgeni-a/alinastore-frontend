@@ -4,12 +4,62 @@
 		"logout": "Logout",
 		"loginWithGoogle": "Login with Google",
 		"welcome": "Welcome",
-		"language": "Language"
+		"language": "Language",
+		"loading": "Loading...",
+		"error": "Error",
+		"success": "Success",
+		"cancel": "Cancel",
+		"save": "Save",
+		"delete": "Delete",
+		"update": "Update"
 	},
 	"auth": {
 		"loginRequired": "Please login to continue",
 		"loggingIn": "Logging in...",
 		"loginError": "Login failed. Please try again."
+	},
+	"catalog": {
+		"title": "Product Catalog",
+		"products": "Products",
+		"price": "Price",
+		"quantity": "Quantity",
+		"addToCart": "Add to Cart",
+		"noProducts": "No products available",
+		"loadError": "Failed to load products"
+	},
+	"cart": {
+		"title": "Shopping Cart",
+		"yourCart": "Your Cart",
+		"item": "Item",
+		"unitPrice": "Unit Price",
+		"quantity": "Quantity",
+		"subtotal": "Subtotal",
+		"total": "Total",
+		"emptyCart": "Your cart is empty",
+		"submitOrder": "Submit Order",
+		"orderSubmitted": "Order submitted successfully!",
+		"orderError": "Failed to submit order",
+		"updateError": "Failed to update cart",
+		"deleteError": "Failed to remove item",
+		"loadError": "Failed to load cart"
+	},
+	"noAccess": {
+		"title": "Access Required",
+		"message": "Your account is pending approval. Please request access to continue.",
+		"requestAccess": "Request Access",
+		"requestSent": "Access request sent. Please wait for approval.",
+		"requestError": "Failed to send access request"
+	},
+	"profile": {
+		"title": "Profile",
+		"name": "Name",
+		"phone": "Phone",
+		"email": "Email",
+		"updateProfile": "Update Profile",
+		"updateSuccess": "Profile updated successfully",
+		"updateError": "Failed to update profile",
+		"phoneRequired": "Phone number is required",
+		"nameRequired": "Name is required"
 	}
 }
 
