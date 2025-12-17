@@ -50,3 +50,4 @@ export function isAuthenticated(): boolean {
 	return localStorage.getItem(TOKEN_KEY) !== null;
 }
 
+

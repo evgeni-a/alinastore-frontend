@@ -1,0 +1,52 @@
+name: Docker Build and deploy to K8S
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: ⬇️ Checkout repository
+        uses: actions/checkout@v2
+
+      - name: 🔐 Login to Docker registry
+        uses: docker/login-action@v2
+        with:
+          registry: registry.rccn.pro
+          username: ${{ secrets.REGISTRY_LOGIN }}
+          password: ${{ secrets.REGISTRY_PASSWORD }}
+
+      - name: 🏗️ Build and push Docker image
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          file: ./Dockerfile
+          push: true
+          tags: registry.rccn.pro/alinastore-frontend:latest
+
+      - name: ⚙️ Kubernetes context
+        uses: Azure/k8s-set-context@v1
+        with:
+          method: kubeconfig
+          kubeconfig: ${{ secrets.KUBE_CONFIG }}
+          namespace: krasa
+
+      - name: 🚀 Deploy
+        run: kubectl -n krasa rollout restart deployment/alinastore-frontend
+
+      - name: ✉️ Send telegram message
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: |
+            ${{ github.actor }} created commit:
+            Commit message: ${{ github.event.commits[0].message }}
+
+            Repository: ${{ github.repository }}
+
+            See changes: https://github.com/${{ github.repository }}/commit/${{github.sha}}

@@ -7,3 +7,4 @@ export async function requireAuth(): Promise<void> {
 	}
 }
 
+
