@@ -28,7 +28,7 @@ jobs:
           push: true
           tags: registry.rccn.pro/alinastore-frontend:latest
           build-args: |
-            VITE_API_BASE_URL=https://store.krasapro.pl
+            VITE_API_BASE_URL=https://api.store.krasapro.pl
 
       - name: ⚙️ Kubernetes context
         uses: Azure/k8s-set-context@v1
